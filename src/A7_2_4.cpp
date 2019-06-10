@@ -20,6 +20,8 @@ namespace ac {
             )
     } {}
 
+    A7_2_4::~A7_2_4() = default;
+
     void A7_2_4::checkASTDecl(const EnumDecl *enumDecl,
                               AnalysisManager &analysisManager,
                               BugReporter &bugReporter) const {

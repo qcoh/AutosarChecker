@@ -1,5 +1,7 @@
 #include "clang/StaticAnalyzer/Core/CheckerRegistry.h"
 
+#include "A7_2_2.h"
+#include "A7_2_3.h"
 #include "A7_2_4.h"
 
 using namespace clang;
@@ -10,6 +12,16 @@ extern "C" void clang_registerCheckers(CheckerRegistry &registry) {
     // registry.addChecker<CHECKER_TYPE>(
     //      "checker.identifier",
     //      "Checker Description");
+
+    registry.addChecker<A7_2_2>(
+            "autosar.A7_2_2",
+            "Enumeration underlying base type shall be explicitly defined."
+    );
+
+    registry.addChecker<A7_2_3>(
+            "autosar.A7_2_3",
+            "Enumerations shall be declared as scoped enum classes."
+    );
 
     registry.addChecker<A7_2_4>(
             "autosar.A7_2_4",
